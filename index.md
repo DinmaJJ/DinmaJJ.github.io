@@ -3,52 +3,43 @@ layout: default
 title: Data Analyst Portfolio
 ---
 
-![Profile Photo](/images/IMG_9880 2.jpg){: width="200px" .profile-pic }
+![Profile Photo](/images/WhatsApp Image 2025-09-02 at 19.55.55 copy.jpg){: width="200px" .profile-pic }
 
-# Hi, I'm Chiagoziem Cyriacus Ugoh 👋
+# Hi, I'm Chidinma Onyeri 👋
 
-I'm a data professional passionate about transforming data into actionable insights. With expertise in basic ETL pipelines (Extract, Transform, Load), machine learning, analytics, data visualization and web applications, I help organizations make data-driven decisions.
+I’m a Data Analyst passionate about transforming data into actionable insights that help organizations optimize operations, identify growth opportunities, and improve overall performance. I enjoy building dashboards, analyzing trends, and turning data into strategies that support smarter decision-making.
+
+I’m committed to continuous learning and growth, whether through professional projects, collaborations, or personal pursuits. Beyond data, I also have a strong love for writing, which helps me communicate complex ideas with clarity and creativity. Always curious, always improving, and always excited to connect with others who love solving business problems with data.
 
 ## Featured Projects
 
-### [Big Data Processing (Sales Revenue Predictions)](https://www.kaggle.com/code/chiagoziemcugoh/big-data-processing-sales-revenue-predictions)
-*Built a machine learning model to predict sales revenue with good accuracy, helping businesses in strategic planning.*
+### [Ecommerce Business Insights Project](https://github.com/DinmaJJ/Ecommerce-Business-Insights-Project/blob/main/Ecommerce_intergration.ipynb)
+*Built a website that cleans and analyses ecommerce data to draw insights showing the trends in sales, proefit and orders and other factors that influence effective decision making.*
 
-**Tools:** Spark, SQL, Python, LogisticRegression, DecisionTreeClassifier, RandomForestClassifier, GBTClassifier
-**Impact:** Helped businesses in strategic planning.
-[View Project →](https://www.kaggle.com/code/chiagoziemcugoh/big-data-processing-sales-revenue-predictions)
-
-### [Global Health Analytics](https://github.com/chidex-coder/Global-Health-Analytics/blob/main/HEALTH%20ETL%20PIPELINE1.ipynb)
-*Built a web application that helps medical professionals for easy diagnosis of patients.*
-
-**Tools:** SQL, Python, Scikit-learn, Pandas, ETL, Streamlit
-**Impact:** Helped medical professionals for easy diagnosis of patients.
-[View Project →](https://github.com/chidex-coder/Global-Health-Analytics/blob/main/HEALTH%20ETL%20PIPELINE1.ipynb)
+**Tools:** SQL, Python
+**Impact:** Helped businesses in making better decsions and deliver excellent service.
+[View Project →](https://github.com/DinmaJJ/Ecommerce-Business-Insights-Project/blob/main/Ecommerce_intergration.ipynb)
 
 ## Featured Web Applications
 
-[Global Health Analytics →](https://global-health-analytics-hzpmji3zqfqwucxw3lt8st.streamlit.app)
+[Ecommerce Business Insights Project→](https://shorturl.at/Qyj5a)
 
-[Advanced Emissions & Renewables Analytics →](https://co2-emissions-and-renewable-energy.onrender.com)
-
-[Kidney Risk Assessment →](https://chiagoziem-s-kidney-disease-risk-assessment-app-22t2pmskrkewep.streamlit.app)
 
 ## Technical Skills
 
 - **Languages:** Python, SQL
-- **Machine Learning:** Scikit-learn, XGBoost
-- **Visualization:** Matplotlib, Seaborn, Plotly, Dash, Tableau
-- **Cloud & Big Data:** Google Cloud, Spark, ETL
+- **Machine Learning:** Scikit-learn
+- **Visualization:** Matplotlib, Seaborn, Plotly, Tableau, PowerBi
+- **Cloud & Big Data:** ETL
 - **Tools:** Jupyter, Vs-Code
-- **Web Application:** Streamlit, Render
+- **Web Application:** Streamlit
 
 ## Contact
 
-- 📧 [chidexmailbox@gmail.com](mailto:chidexmailbox@gmail.com)
-- 🔽 [Download CV](/images/C.V.pdf)
-- 🔗 [LinkedIn](https://www.linkedin.com/in/chiagoziem-cyriacus-ugoh-078121182/)
-- 🐙 [GitHub](https://github.com/chidex-coder)
-- 📊 [Kaggle](https://www.kaggle.com/chiagoziemcugoh/code)
+- 📧 [chidinmaonyeri1@gmail.com](mailto:chidinmaonyeri1@gmail.com)
+- 🔽 [Download CV](/images/Onyeri_Chidinma_resume.pdf)
+- 🔗 [LinkedIn](https://www.linkedin.com/in/chidinma-onyeri/)
+- 🐙 [GitHub](https://github.com/DinmaJJ)
 
 ---
 
