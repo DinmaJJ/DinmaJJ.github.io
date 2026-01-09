@@ -1,1 +1,20 @@
+# Site settings
+title: "Chidinma Onyeri - Data Analyst"
+description: "Data Analytics portfolio showcasing data analytics projects"
+author: "Chidinma Onyeri"
+email: "chidinmaonyeri1@gmail.com"
 
+# Theme
+theme: jekyll-theme-minimal
+
+# Social links
+github_username: https://github.com/DinmaJJ
+linkedin_username: https://www.linkedin.com/in/chidinma-onyeri/
+
+# Enable GitHub Pages
+plugins:
+- jekyll-feed
+- jekyll-seo-tag
+
+# Analytics (optional)
+# google_analytics: G-XXXXXXXXXX
