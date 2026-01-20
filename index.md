@@ -20,6 +20,14 @@ I’m committed to continuous learning and growth, whether through professional 
 **Impact:** Helped businesses in making better decsions and deliver excellent service.
 [View Project →](https://github.com/DinmaJJ/Ecommerce-Business-Insights-Project/blob/main/Ecommerce_intergration.ipynb)
 
+### [Ecommerce Business Insights Project](https://github.com/DinmaJJ/Ecommerce-Business-Insights-Project/blob/main/Ecommerce_intergration.ipynb)
+*Built a website that cleans and analyses ecommerce data to draw insights showing the trends in sales, proefit and orders and other factors that influence effective decision making.*
+
+**Tools:** SQL, Python
+**Impact:** Helped businesses in making better decsions and deliver excellent service.
+[View Project →](https://github.com/DinmaJJ/Ecommerce-Business-Insights-Project/blob/main/Ecommerce_intergration.ipynb)
+
+
 ## Featured Web Applications
 
 [Ecommerce Business Insights Project→](https://shorturl.at/Qyj5a)
