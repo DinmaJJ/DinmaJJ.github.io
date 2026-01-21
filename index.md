@@ -14,24 +14,25 @@ I’m committed to continuous learning and growth, whether through professional 
 ## Featured Projects
 
 ### [Ecommerce Business Insights Project](https://github.com/DinmaJJ/Ecommerce-Business-Insights-Project/blob/main/Ecommerce_intergration.ipynb)
-*Built a website that cleans and analyses ecommerce data to draw insights showing the trends in sales, proefit and orders and other factors that influence effective decision making.*
+*An end-to-end data analytics web application built to help e-commerce businesses understand customer behavior and improve decision-making. The project involved exploratory data analysis, an automated ETL pipeline for data cleaning and standardization, and machine learning models for customer churn prediction and customer lifetime value (LTV) forecasting using Random Forest. The platform integrates analysis, predictions, visual dashboards, and downloadable reports into a single web interface.*
 
-**Tools:** SQL, Python
-**Impact:** Helped businesses in making better decsions and deliver excellent service.
+**Tools:** SQL, Python, RandomForestClassifier, RandomForestRegressor
+**Impact:** Enabled the business to identify retention issues, optimize revenue strategies, and make data-driven decisions, improving operational efficiency and customer insights.
 [View Project →](https://github.com/DinmaJJ/Ecommerce-Business-Insights-Project/blob/main/Ecommerce_intergration.ipynb)
 
-### [Ecommerce Business Insights Project](https://github.com/DinmaJJ/Ecommerce-Business-Insights-Project/blob/main/Ecommerce_intergration.ipynb)
-*Built a website that cleans and analyses ecommerce data to draw insights showing the trends in sales, proefit and orders and other factors that influence effective decision making.*
+### [Automated SIM Registration Project](https://github.com/DinmaJJ/Automated-SIM-registration-Website/blob/main/SIM%20REGISTRATION%20PROJECT.ipynb)
+*A web-based system designed to automate SIM registration for telecommunications companies. The application allows customer data to be entered via forms or uploaded in bulk, automatically cleans and validates the data, and registers customers directly into the organization’s database. It also compares manual vs automated registration time, visualizing efficiency gains through charts to demonstrate operational improvement.*
 
-**Tools:** SQL, Python
-**Impact:** Helped businesses in making better decsions and deliver excellent service.
-[View Project →](https://github.com/DinmaJJ/Ecommerce-Business-Insights-Project/blob/main/Ecommerce_intergration.ipynb)
+**Tools:** SQL, Python, Faker
+**Impact:** Reduced registration time significantly, minimized human errors, and improved operational efficiency for telecom companies.
+[View Project →](https://github.com/DinmaJJ/Automated-SIM-registration-Website/blob/main/SIM%20REGISTRATION%20PROJECT.ipynb)
 
 
 ## Featured Web Applications
 
 [Ecommerce Business Insights Project→](https://shorturl.at/Qyj5a)
 
+[Automated SIM Registration Project→](https://automated-sim-registration-website-llbxzsmi8ya8rpgjbuweyd.streamlit.app/)
 
 ## Technical Skills
 
@@ -47,6 +48,7 @@ I’m committed to continuous learning and growth, whether through professional 
 - 📧 [chidinmaonyeri1@gmail.com](mailto:chidinmaonyeri1@gmail.com)
 - 🔽 [Download CV](/images/Onyeri_Chidinma_resume.pdf)
 - 🔗 [LinkedIn](https://www.linkedin.com/in/chidinma-onyeri/)
+- 📊 [Tableau](https://public.tableau.com/app/profile/chidinma.onyeri/vizzes)
 - 🐙 [GitHub](https://github.com/DinmaJJ)
 
 ---
