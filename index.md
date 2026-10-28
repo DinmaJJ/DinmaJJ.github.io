@@ -103,7 +103,7 @@ Covenant University, Nigeria
 I am interested in opportunities across data analytics, business intelligence, and data engineering where I can solve business problems, build analytical solutions, and continue developing my technical skills.
 
 - 📧 [chidinmaonyeri1@gmail.com](mailto:chidinmaonyeri1@gmail.com)
-- 🔽 [Download CV](/images/Onyeri_Chidinma_resume(2).pdf)
+- 🔽 [Download CV](images/Onyeri_Chidinma_resume (2).pdf)
 - 🔗 [LinkedIn](https://www.linkedin.com/in/chidinma-onyeri/)
 - 📊 [Tableau](https://public.tableau.com/app/profile/chidinma.onyeri/vizzes)
 - 🐙 [GitHub](https://github.com/DinmaJJ)
