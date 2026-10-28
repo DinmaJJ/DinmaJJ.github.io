@@ -5,45 +5,102 @@ title: Data Analyst Portfolio
 
 ![Profile Photo](/images/WhatsApp Image 2025-09-02 at 19.55.55 copy.jpg){: width="200px" .profile-pic }
 
-# Hi, I'm Chidinma Onyeri 👋
+# Chidinma Onyeri
 
-I’m a Data Analyst passionate about transforming data into actionable insights that help organizations optimize operations, identify growth opportunities, and improve overall performance. I enjoy building dashboards, analyzing trends, and turning data into strategies that support smarter decision-making.
+### Data Analytics | Business Intelligence | Data Engineering
 
-I’m committed to continuous learning and growth, whether through professional projects, collaborations, or personal pursuits. Beyond data, I also have a strong love for writing, which helps me communicate complex ideas with clarity and creativity. Always curious, always improving, and always excited to connect with others who love solving business problems with data.
+I am a Computer Science graduate with experience in account management, business analysis, and data analytics. I enjoy working with data to uncover patterns, investigate business problems, and build solutions that support better decisions.
 
-## Featured Projects
+My work spans exploratory data analysis, business intelligence, customer analytics, and data pipeline development using Python, SQL, and analytical tools.
 
-### [Ecommerce Business Insights Project](https://github.com/DinmaJJ/Ecommerce-Business-Insights-Project/blob/main/Ecommerce_intergration.ipynb)
-*An end-to-end data analytics web application built to help e-commerce businesses understand customer behavior and improve decision-making. The project involved exploratory data analysis, an automated ETL pipeline for data cleaning and standardization, and machine learning models for customer churn prediction and customer lifetime value (LTV) forecasting using Random Forest. The platform integrates analysis, predictions, visual dashboards, and downloadable reports into a single web interface.*
+[View My Projects](#selected-projects) · [GitHub](https://github.com/DinmaJJ) · [Email Me](mailto:chidinmaonyeri1@gmail.com)
 
-**Tools:** SQL, Python, RandomForestClassifier, RandomForestRegressor
-**Impact:** Enabled the business to identify retention issues, optimize revenue strategies, and make data-driven decisions, improving operational efficiency and customer insights.
-[View Project →](https://github.com/DinmaJJ/Ecommerce-Business-Insights-Project/blob/main/Ecommerce_intergration.ipynb)
+---
 
-### [Automated SIM Registration Project](https://github.com/DinmaJJ/Automated-SIM-registration-Website/blob/main/SIM%20REGISTRATION%20PROJECT.ipynb)
-*A web-based system designed to automate SIM registration for telecommunications companies. The application allows customer data to be entered via forms or uploaded in bulk, automatically cleans and validates the data, and registers customers directly into the organization’s database. It also compares manual vs automated registration time, visualizing efficiency gains through charts to demonstrate operational improvement.*
+## About Me
 
-**Tools:** SQL, Python, Faker
-**Impact:** Reduced registration time significantly, minimized human errors, and improved operational efficiency for telecom companies.
-[View Project →](https://github.com/DinmaJJ/Automated-SIM-registration-Website/blob/main/SIM%20REGISTRATION%20PROJECT.ipynb)
+My background combines business operations with technical problem-solving. Through my experience in fintech account management and business analysis projects, I have worked with transaction data, customer behaviour, performance trends, and business reporting.
 
+I am building my expertise in data analytics and data engineering, with a focus on turning raw data into reliable, useful insights.
 
-## Featured Web Applications
+## Selected Projects
 
-[Ecommerce Business Insights Project→](https://shorturl.at/Qyj5a)
+### 1. S&P 500 Insight
+**Financial Analytics | Data Engineering | Python | SQL**
 
-[Automated SIM Registration Project→](https://automated-sim-registration-website-llbxzsmi8ya8rpgjbuweyd.streamlit.app/)
+An investment research platform designed to help users explore and compare S&P 500 companies using value, quality, and momentum signals.
+
+**What I built**
+- Integrated market prices, company fundamentals, and company profiles from external data sources.
+- Designed a stock scoring framework combining value, quality, and momentum indicators.
+- Used PostgreSQL and TimescaleDB to store market data and analytical outputs.
+- Developed a data workflow with database upserts and Alembic migrations.
+- Built an interactive dashboard for exploring stock rankings and investment signals.
+
+**Technologies:** Python, SQL, PostgreSQL, TimescaleDB, FastAPI, Streamlit, Docker.
+
+[Open Live Dashboard](https://s-p500-insights-dashboard.streamlit.app/)
+
+### 2. E-commerce Business Insights
+**Business Intelligence | Customer Analytics | Predictive Analytics**
+
+An interactive analytics application built to explore e-commerce performance, customer behaviour, product trends, and opportunities for business growth.
+
+**What I built**
+- Worked with four datasets containing more than 50,000 records.
+- Developed a data cleaning and SQLite ETL workflow to streamline data preparation.
+- Used exploratory analysis to investigate sales performance, customer purchasing patterns, and product delivery.
+- Applied customer segmentation and machine learning techniques to explore churn risk and customer lifetime value.
+- Built interactive visualisations and analytical outputs to support business decision-making.
+
+**Technologies:** Python, Pandas, NumPy, SQLite, Streamlit, Plotly, Scikit-learn.
+
+[Open Live Dashboard](https://ecommerce-business-insights-project.streamlit.app/)
+
+---
+
+## Professional Experience
+
+### Account Manager — BudPay
+**Bud Infrastructure Limited | Lagos, Nigeria**
+
+- Manage merchant relationships and monitor transaction performance across Nigeria, Kenya, and Ghana.
+- Use Metabase, Excel, and Google Sheets to investigate transaction trends, revenue changes, and payment success rates.
+- Identify processing issues and coordinate with Engineering, Product, Operations, and other teams to resolve merchant challenges.
+- Prepare performance reports covering transaction volume, revenue, budget comparisons, and operational issues.
+- Use data-driven monitoring to identify anomalies and support merchant performance.
+
+### Business Analyst Intern — Saiket Systems
+**September 2025 – October 2025**
+
+- Analysed telecom customer churn using Python, Pandas, and NumPy.
+- Explored customer tenure and demographic patterns associated with churn.
+- Used visualisations to communicate findings and identify customer groups that may need targeted retention strategies.
+
+---
 
 ## Technical Skills
 
-- **Languages:** Python, SQL
-- **Machine Learning:** Scikit-learn
-- **Visualization:** Matplotlib, Seaborn, Plotly, Tableau, PowerBi
-- **Cloud & Big Data:** ETL
-- **Tools:** Jupyter, Vs-Code
-- **Web Application:** Streamlit
+**Programming & Data Analysis:** Python, SQL, Pandas, NumPy
 
-## Contact
+**Databases & Data Engineering:** PostgreSQL, SQLite, TimescaleDB, ETL, Docker, Git, GitHub Actions
+
+**Business Intelligence & Visualisation:** Power BI, Tableau, Excel, Streamlit, Plotly
+
+**Analytics:** Exploratory Data Analysis, Data Cleaning, KPI Reporting, Customer Analytics, Trend Analysis, Data Visualisation
+
+---
+
+## Education
+
+**B.Sc. Computer Science**  
+Covenant University, Nigeria
+
+---
+
+## Let's Connect
+
+I am interested in opportunities across data analytics, business intelligence, and data engineering where I can solve business problems, build analytical solutions, and continue developing my technical skills.
 
 - 📧 [chidinmaonyeri1@gmail.com](mailto:chidinmaonyeri1@gmail.com)
 - 🔽 [Download CV](/images/Onyeri_Chidinma_resume.pdf)
