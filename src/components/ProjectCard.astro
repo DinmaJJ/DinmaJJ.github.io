@@ -1,0 +1,101 @@
+---
+import Thumb from './Thumb.astro';
+
+interface Props {
+  url: string;
+  index: number;
+  title: string;
+  tags: string[];
+  summary: string;
+  stack: string[];
+  live?: string;
+  repo?: string;
+  image?: string;
+}
+const { url, index, title, tags, summary, stack, live, repo, image } = Astro.props;
+const flip = index % 2 === 1;
+---
+
+<article class:list={['card', { flip }]} data-reveal>
+  {
+    image && (
+      <a class="card-visual" href={url} tabindex="-1" aria-hidden="true">
+        <Thumb image={image} alt="" />
+      </a>
+    )
+  }
+  <div class="card-body">
+    <div class="card-tags">
+      {tags.map((t, i) => <span class:list={['pill', { 'pill-ink': i === 0 }]}>{t}</span>)}
+    </div>
+    <h3><a href={url}>{title}</a></h3>
+    <p class="card-summary">{summary}</p>
+    <p class="card-stack">{stack.join(', ')}</p>
+    <div class="card-actions">
+      <a class="btn btn-ink" href={url}>Case study</a>
+      {live && (
+        <a class="btn btn-line" href={live} target="_blank" rel="noopener">
+          Live dashboard <span aria-hidden="true">↗</span>
+        </a>
+      )}
+      {repo && (
+        <a class="card-code" href={repo} target="_blank" rel="noopener">
+          View code <span aria-hidden="true">↗</span>
+        </a>
+      )}
+    </div>
+  </div>
+</article>
+
+<style>
+  .card {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 32px;
+    padding: 32px;
+    background: var(--paper);
+    border: 1.5px solid var(--line);
+    border-radius: var(--radius-l);
+  }
+  .card.flip { flex-direction: row-reverse; }
+  .card-visual { flex: 1.15 1 420px; min-width: 0; display: block; }
+  .card-body {
+    flex: 1 1 380px;
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 14px;
+  }
+  .card-tags { display: flex; flex-wrap: wrap; gap: 8px; }
+  h3 { font-weight: 700; font-size: clamp(28px, 4vw, 36px); line-height: 1.1; letter-spacing: -0.02em; }
+  h3 a { color: var(--ink); text-decoration: none; }
+  h3 a:hover { color: var(--blue); }
+  .card-summary { font-size: 17px; color: var(--ink-2); }
+  .card-stack { font-size: 14px; color: var(--ink-3); }
+  .card-actions { display: flex; flex-wrap: wrap; gap: 12px; padding-top: 6px; }
+  .card-actions .btn { min-height: 48px; padding: 0 22px; }
+  /* A text link, so a third action doesn't read as a third competing button */
+  .card-code {
+    display: inline-flex; align-items: center; gap: 6px;
+    min-height: 48px; padding: 0 6px;
+    color: var(--ink); font-weight: 600;
+    text-underline-offset: 4px;
+  }
+  .card-code:hover { color: var(--blue); }
+
+  /* Phones: drop the outer card so the screenshot and text get the full width */
+  @media (max-width: 640px) {
+    .card, .card.flip {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr);
+      gap: 20px;
+      padding: 0;
+      border: 0;
+      background: none;
+      border-radius: 0;
+    }
+    .card-summary { font-size: 16px; }
+    .card-actions .btn { flex: 1 1 auto; justify-content: center; padding: 0 18px; }
+  }
+</style>

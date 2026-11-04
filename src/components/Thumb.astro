@@ -1,0 +1,42 @@
+---
+// Dashboard screenshot on a blue panel, cropped so it peeks in from the
+// bottom right. Set `image: /images/work/<file>.jpg` in a project's frontmatter
+// (npm run shots retakes them from the live apps).
+interface Props {
+  image: string;
+  alt: string;
+  size?: 'card' | 'page';
+}
+const { image, alt, size = 'card' } = Astro.props;
+---
+
+<div class:list={['thumb', `thumb-${size}`]}>
+  <img src={image} alt={alt} width="1130" height="900" loading="lazy" decoding="async" />
+</div>
+
+<style>
+  .thumb {
+    --inset: 28px;
+    position: relative;
+    background: var(--blue);
+    border-radius: var(--radius-m);
+    overflow: hidden;
+    aspect-ratio: 16 / 11;
+  }
+  .thumb-page { --inset: 40px; aspect-ratio: 16 / 8; }
+  /* Absolutely placed so the oversized screenshot never widens the layout */
+  .thumb img {
+    position: absolute;
+    top: var(--inset);
+    left: var(--inset);
+    width: max(560px, 100% - var(--inset));
+    height: auto;
+    max-width: none;
+    border-top-left-radius: 12px;
+    box-shadow: 0 0 0 1.5px var(--ink);
+  }
+  @media (max-width: 640px) {
+    .thumb, .thumb-page { --inset: 18px; aspect-ratio: 4 / 3; }
+    .thumb img { width: max(480px, 100% - var(--inset)); border-top-left-radius: 10px; }
+  }
+</style>

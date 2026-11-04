@@ -1,0 +1,109 @@
+---
+import Base from './Base.astro';
+import Thumb from '../components/Thumb.astro';
+import { profile } from '../data/profile';
+
+const { frontmatter } = Astro.props;
+const { title, tags = [], summary, stack = [], live, repo, image } = frontmatter;
+
+// "Next project" follows the home page order and wraps back to the first.
+const all = (Object.values(import.meta.glob('../pages/work/*.md', { eager: true })) as any[])
+  .map((m) => ({ ...m.frontmatter, url: m.url }))
+  .sort((a, b) => (a.order ?? 99) - (b.order ?? 99));
+const here = all.findIndex((p) => p.title === title);
+const next = all.length > 1 ? all[(here + 1) % all.length] : undefined;
+---
+
+<Base title={`${title} | ${profile.name}`} description={summary}>
+  <div class="wrap">
+    <a class="back" href="/#work"><span aria-hidden="true">←</span> All work</a>
+
+    <header class="cs-head">
+      <div class="cs-tags">
+        {tags.map((t: string, i: number) => <span class:list={['pill', { 'pill-ink': i === 0 }]}>{t}</span>)}
+      </div>
+      <h1>{title}</h1>
+      <p class="cs-summary">{summary}</p>
+      {
+        (live || repo) && (
+          <div class="cs-actions">
+            {live && (
+              <a class="btn btn-blue" href={live} target="_blank" rel="noopener">
+                Open live dashboard <span aria-hidden="true">↗</span>
+              </a>
+            )}
+            {repo && (
+              <a class="btn btn-line" href={repo} target="_blank" rel="noopener">
+                View code <span aria-hidden="true">↗</span>
+              </a>
+            )}
+          </div>
+        )
+      }
+    </header>
+
+    {image && <Thumb image={image} alt={`${title} dashboard`} size="page" />}
+
+    <div class="cs-body">
+      <aside class="cs-meta" aria-label="Project details">
+        <h2>Stack</h2>
+        <ul>
+          {stack.map((s: string) => <li class="pill">{s}</li>)}
+        </ul>
+      </aside>
+      <article class="cs-prose">
+        <slot />
+      </article>
+    </div>
+
+    {
+      next && (
+        <a class="next" href={next.url}>
+          <span class="next-label">Next project</span>
+          <span class="next-title">
+            {next.title} <span aria-hidden="true">→</span>
+          </span>
+        </a>
+      )
+    }
+  </div>
+</Base>
+
+<style>
+  .back {
+    display: inline-flex; gap: 8px; align-items: center;
+    padding: 10px 0; margin-top: 8px;
+    color: var(--ink); font-weight: 500; text-decoration: none;
+  }
+  .back:hover { color: var(--blue); }
+
+  .cs-head { display: flex; flex-direction: column; gap: 20px; align-items: flex-start; padding: 32px 0 40px; max-width: 860px; }
+  .cs-tags { display: flex; flex-wrap: wrap; gap: 8px; }
+  .cs-head h1 { font-size: clamp(48px, 8vw, 84px); line-height: 0.95; letter-spacing: -0.04em; }
+  .cs-summary { font-size: clamp(18px, 2.2vw, 21px); color: var(--ink-2); }
+  .cs-actions { display: flex; flex-wrap: wrap; gap: 12px; }
+
+  .cs-body { display: flex; flex-wrap: wrap; gap: 48px; padding: 56px 0 24px; }
+  .cs-meta { flex: 1 1 240px; }
+  .cs-meta h2 { font-size: 22px; margin-bottom: 14px; letter-spacing: -0.02em; }
+  .cs-meta ul { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: 8px; }
+
+  .cs-prose { flex: 3 1 560px; min-width: 0; max-width: 720px; font-size: 18px; color: var(--ink-2); }
+  .cs-prose :global(h2) { font-size: clamp(28px, 3.6vw, 36px); color: var(--ink); margin: 48px 0 14px; }
+  .cs-prose :global(h2:first-child) { margin-top: 0; }
+  .cs-prose :global(p) { margin: 0 0 14px; }
+  .cs-prose :global(ul) { margin: 0 0 14px; padding-left: 22px; display: flex; flex-direction: column; gap: 8px; }
+  .cs-prose :global(strong) { color: var(--ink); }
+
+  .next {
+    display: flex; flex-direction: column; gap: 6px;
+    margin: 64px 0 24px; padding: clamp(28px, 5vw, 48px);
+    background: var(--ink); color: #fff; border-radius: var(--radius-l);
+    text-decoration: none;
+    transition: background-color 200ms ease-out;
+  }
+  .next:hover { background: var(--blue); color: #fff; }
+  .next-label { font-size: 14px; color: var(--on-ink); }
+  .next:hover .next-label { color: #fff; }
+  .next-title { font-family: var(--display); font-weight: 800; font-size: clamp(32px, 5vw, 52px); letter-spacing: -0.03em; line-height: 1.05; }
+</style>

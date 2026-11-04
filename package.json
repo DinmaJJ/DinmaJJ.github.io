@@ -1,0 +1,21 @@
+{
+  "name": "chidinma-portfolio",
+  "type": "module",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "astro": "astro",
+    "shots": "node scripts/capture-shots.mjs"
+  },
+  "dependencies": {
+    "@fontsource-variable/bricolage-grotesque": "5.3.0",
+    "@fontsource-variable/inter": "5.3.0",
+    "astro": "7.3.5"
+  },
+  "devDependencies": {
+    "@playwright/test": "1.64.1"
+  }
+}

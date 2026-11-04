@@ -1,0 +1,235 @@
+---
+import Base from '../layouts/Base.astro';
+import ProjectCard from '../components/ProjectCard.astro';
+import { Image } from 'astro:assets';
+import { profile, metrics, experience, skills } from '../data/profile';
+import photo from '../assets/chidinma.jpg';
+
+const modules = Object.values(import.meta.glob('./work/*.md', { eager: true })) as any[];
+const projects = modules
+  .map((m) => ({ ...m.frontmatter, url: m.url }))
+  .sort((a, b) => (a.order ?? 99) - (b.order ?? 99));
+---
+
+<Base
+  title={`${profile.name} | Data Analyst`}
+  description="Chidinma Onyeri is a Lagos-based data analyst working across analytics, business intelligence and data engineering."
+>
+  <div class="wrap">
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="hero-copy">
+        <span class="pill hero-badge">{profile.name} · Data Analyst</span>
+        <h1 id="hero-title">Data that moves <span class="accent">money</span> and <span class="accent">minds</span>.</h1>
+        <p class="hero-intro">{profile.intro}</p>
+        <div class="hero-actions">
+          <a class="btn btn-blue" href="#work">See my work</a>
+          <a class="btn btn-line" href={profile.cv} target="_blank" rel="noopener">Download CV</a>
+        </div>
+      </div>
+      <div class="hero-photo">
+        <Image
+          src={photo}
+          alt={`Portrait of ${profile.name}`}
+          widths={[280, 360, 540, 720]}
+          sizes="(max-width: 640px) 140px, 360px"
+          loading="eager"
+          fetchpriority="high"
+        />
+      </div>
+    </section>
+
+    <section class="metrics" aria-label="Key numbers">
+      {
+        metrics.map((m) => (
+          <div class="metric">
+            <span class="metric-value">{m.value}</span>
+            <span class="metric-label">{m.label}</span>
+          </div>
+        ))
+      }
+    </section>
+
+    <section id="work" class="section" aria-labelledby="work-title">
+      <h2 id="work-title" class="section-title">Selected work</h2>
+      <div class="projects">
+        {projects.map((p, i) => <ProjectCard index={i} {...p} />)}
+      </div>
+    </section>
+
+    <section id="experience" class="section split" aria-labelledby="exp-title">
+      <div class="about" data-reveal>
+        <h2 id="exp-title" class="section-title">Where I've worked</h2>
+        {profile.about.map((para) => <p>{para}</p>)}
+      </div>
+      <ol class="timeline">
+        {
+          experience.map((job) => (
+            <li class="job" data-reveal>
+              <div class="job-head">
+                <h3>{job.role}</h3>
+                <span class="job-when">{job.when}</span>
+              </div>
+              <p class="job-org">{job.where ? `${job.org}, ${job.where}` : job.org}</p>
+              <ul>
+                {job.points.map((pt) => <li>{pt}</li>)}
+              </ul>
+            </li>
+          ))
+        }
+      </ol>
+    </section>
+
+    <section id="skills" class="section" aria-labelledby="skills-title">
+      <h2 id="skills-title" class="section-title">Toolkit</h2>
+      <dl class="skills" data-reveal>
+        {
+          skills.map((s) => (
+            <div class="skill-row">
+              <dt>{s.group}</dt>
+              <dd>
+                <ul>
+                  {s.items.map((it) => <li class="pill">{it}</li>)}
+                </ul>
+              </dd>
+            </div>
+          ))
+        }
+      </dl>
+    </section>
+
+    <section id="contact" class="section" aria-labelledby="contact-title">
+      <div class="contact" data-reveal>
+        <h2 id="contact-title">Got data that needs a story? Let's talk.</h2>
+        <div class="contact-actions">
+          <a class="btn btn-white" href={`mailto:${profile.email}`}>{profile.email}</a>
+          <nav aria-label="Elsewhere" class="contact-links">
+            <a href={profile.links.linkedin} target="_blank" rel="noopener">LinkedIn</a>
+            <a href={profile.links.github} target="_blank" rel="noopener">GitHub</a>
+            <a href={profile.links.tableau} target="_blank" rel="noopener">Tableau</a>
+            <a href={profile.cv} target="_blank" rel="noopener">CV (PDF)</a>
+          </nav>
+        </div>
+      </div>
+    </section>
+  </div>
+</Base>
+
+<style>
+  .hero {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 40px;
+    align-items: center;
+    padding: clamp(32px, 7vw, 72px) 0 56px;
+  }
+  .hero-copy { flex: 1 1 560px; min-width: 0; display: flex; flex-direction: column; gap: 24px; }
+  .hero-badge { align-self: flex-start; font-size: 14px; font-weight: 600; padding: 6px 14px; }
+  .hero h1 { font-size: clamp(48px, 8.4vw, 88px); line-height: 0.95; letter-spacing: -0.04em; }
+  .hero-intro { max-width: 560px; font-size: clamp(17px, 2vw, 19px); color: var(--ink-2); }
+  .hero-actions { display: flex; flex-wrap: wrap; gap: 12px; padding-top: 4px; }
+  .hero-photo {
+    flex: 0 1 360px;
+    min-width: 260px;
+    aspect-ratio: 4 / 5;
+    background: var(--blue);
+    border-radius: var(--radius-l);
+    overflow: hidden;
+  }
+  .hero-photo img { width: 100%; height: 100%; object-fit: cover; object-position: center 20%; }
+  /* On phones the photo becomes a small tile above the headline */
+  @media (max-width: 640px) {
+    .hero { gap: 24px; }
+    .hero-photo {
+      order: -1;
+      flex: 0 0 auto;
+      width: 140px;
+      min-width: 0;
+      aspect-ratio: 1 / 1;
+    }
+  }
+
+  .metrics {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    background: var(--ink);
+    color: #fff;
+    border-radius: var(--radius-l);
+    overflow: hidden;
+  }
+  .metric { padding: 32px; display: flex; flex-direction: column; gap: 6px; }
+  .metric + .metric { border-left: 1px solid #333; }
+  .metric-value {
+    font-family: var(--display);
+    font-weight: 800;
+    font-size: clamp(44px, 6vw, 60px);
+    line-height: 1;
+    letter-spacing: -0.03em;
+  }
+  .metric-label { font-size: 15px; color: var(--on-ink); }
+  /* Phones: the big number takes the top row, the other two share the second */
+  @media (max-width: 640px) {
+    .metrics { grid-template-columns: 1fr 1fr; }
+    .metric { padding: 22px 20px; }
+    .metric:first-child { grid-column: 1 / -1; border-bottom: 1px solid #333; }
+    .metric + .metric { border-left: 0; }
+    .metric:last-child { border-left: 1px solid #333; }
+    .metric-value { font-size: 40px; }
+    .metric + .metric .metric-value { font-size: clamp(28px, 9vw, 40px); }
+    .metric-label { font-size: 14px; line-height: 1.4; }
+  }
+
+  .projects { display: flex; flex-direction: column; gap: 24px; }
+  @media (max-width: 640px) {
+    .projects { gap: 56px; }
+  }
+
+  .split { display: flex; flex-wrap: wrap; gap: 48px; }
+  .about { flex: 1 1 360px; display: flex; flex-direction: column; gap: 16px; color: var(--ink-2); font-size: 17px; }
+  .about .section-title { color: var(--ink); margin-bottom: 8px; }
+  .timeline { flex: 1.4 1 480px; min-width: 0; list-style: none; margin: 0; padding: 0; }
+  .job { border-top: 1.5px solid var(--line); padding: 28px 0 32px; }
+  .job:last-child { padding-bottom: 0; }
+  .job-head { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: baseline; gap: 4px 16px; }
+  .job h3 { font-weight: 700; font-size: 26px; letter-spacing: -0.02em; }
+  .job-when { font-size: 14px; font-weight: 600; color: var(--blue); }
+  .job-org { margin-top: 6px; font-weight: 500; color: var(--ink-2); }
+  .job ul { margin: 14px 0 0; padding-left: 20px; color: var(--ink-2); display: flex; flex-direction: column; gap: 6px; }
+
+  .skills { margin: 0; }
+  .skill-row {
+    display: grid;
+    grid-template-columns: minmax(0, 220px) minmax(0, 1fr);
+    gap: 12px 32px;
+    align-items: baseline;
+    padding: 24px 0;
+    border-top: 1px solid var(--soft-line);
+  }
+  .skill-row:first-child { border-top: 0; padding-top: 0; }
+  .skill-row dt { font-family: var(--display); font-weight: 800; font-size: 28px; letter-spacing: -0.03em; }
+  .skill-row dd { margin: 0; }
+  .skill-row ul { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: 8px; }
+  .skill-row .pill { font-size: 14px; padding: 6px 14px; }
+  @media (max-width: 640px) {
+    .skill-row { grid-template-columns: minmax(0, 1fr); padding: 20px 0; }
+    .skill-row dt { font-size: 22px; }
+  }
+
+  .contact {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 28px;
+    justify-content: space-between;
+    align-items: center;
+    padding: clamp(28px, 5vw, 56px);
+    margin-bottom: 24px;
+    background: var(--blue);
+    color: #fff;
+    border-radius: var(--radius-l);
+  }
+  .contact h2 { flex: 1 1 480px; font-size: clamp(36px, 5vw, 52px); line-height: 1.05; }
+  .contact-actions { display: flex; flex-direction: column; gap: 12px; align-items: flex-start; min-width: 0; }
+  .contact-actions .btn { max-width: 100%; overflow-wrap: anywhere; }
+  .contact-links { display: flex; flex-wrap: wrap; gap: 4px 20px; font-weight: 500; }
+  .contact-links a { color: #fff; padding: 10px 0; }
+  .contact-links a:hover { color: var(--ink); }
+</style>
