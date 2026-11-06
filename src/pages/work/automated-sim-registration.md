@@ -2,6 +2,7 @@
 layout: ../../layouts/CaseStudy.astro
 title: Automated SIM Registration System
 order: 3
+image: /images/work/automated-sim-registration.jpg
 tags: [Data automation, Data validation]
 summary: A small registration workflow that validates and standardises customer records, reducing the time required to process each record.
 stack: [Python, SQLite, Streamlit, Pandas]
