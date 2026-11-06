@@ -4,7 +4,7 @@ import Thumb from '../components/Thumb.astro';
 import { profile } from '../data/profile';
 
 const { frontmatter } = Astro.props;
-const { title, tags = [], summary, stack = [], live, repo, image } = frontmatter;
+const { title, tags = [], summary, stack = [], live, repo, image, imageFit = false } = frontmatter;
 
 // "Next project" follows the home page order and wraps back to the first.
 const all = (Object.values(import.meta.glob('../pages/work/*.md', { eager: true })) as any[])
@@ -42,7 +42,7 @@ const next = all.length > 1 ? all[(here + 1) % all.length] : undefined;
       }
     </header>
 
-    {image && <Thumb image={image} alt={`${title} dashboard`} size="page" />}
+    {image && <Thumb image={image} alt={`${title} dashboard`} size="page" fit={imageFit} />}
 
     <div class="cs-body">
       <aside class="cs-meta" aria-label="Project details">
