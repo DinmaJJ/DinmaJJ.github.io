@@ -11,8 +11,9 @@ interface Props {
   live?: string;
   repo?: string;
   image?: string;
+  imageFit?: boolean;
 }
-const { url, index, title, tags, summary, stack, live, repo, image } = Astro.props;
+const { url, index, title, tags, summary, stack, live, repo, image, imageFit = false } = Astro.props;
 const flip = index % 2 === 1;
 ---
 
@@ -20,7 +21,7 @@ const flip = index % 2 === 1;
   {
     image && (
       <a class="card-visual" href={url} tabindex="-1" aria-hidden="true">
-        <Thumb image={image} alt="" />
+        <Thumb image={image} alt="" fit={imageFit} />
       </a>
     )
   }
