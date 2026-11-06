@@ -6,11 +6,12 @@ interface Props {
   image: string;
   alt: string;
   size?: 'card' | 'page';
+  fit?: boolean;
 }
-const { image, alt, size = 'card' } = Astro.props;
+const { image, alt, size = 'card', fit = false } = Astro.props;
 ---
 
-<div class:list={['thumb', `thumb-${size}`]}>
+<div class:list={['thumb', `thumb-${size}`, { 'thumb-fit': fit }]}>
   <img src={image} alt={alt} width="1130" height="900" loading="lazy" decoding="async" />
 </div>
 
@@ -35,6 +36,8 @@ const { image, alt, size = 'card' } = Astro.props;
     border-top-left-radius: 12px;
     box-shadow: 0 0 0 1.5px var(--ink);
   }
+  .thumb-fit { aspect-ratio: auto; background: transparent; overflow: visible; }
+  .thumb-fit img { position: static; display: block; width: 100%; max-width: 100%; height: auto; border-radius: var(--radius-m); box-shadow: 0 0 0 1.5px var(--ink); }
   @media (max-width: 640px) {
     .thumb, .thumb-page { --inset: 18px; aspect-ratio: 4 / 3; }
     .thumb img { width: max(480px, 100% - var(--inset)); border-top-left-radius: 10px; }
